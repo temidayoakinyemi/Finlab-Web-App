@@ -1,0 +1,340 @@
+.login-container {
+  background-color: #1a1c1e;
+}
+
+.logotext {
+  display: flex;
+  align-items: center;
+  margin-left: 40%;
+  margin-top: 150px;
+}
+
+.finlablogotext {
+  margin-left: 10px;
+}
+
+.loginh1 {
+  color: #fff;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: -1.08px;
+  margin-top: 30px;
+}
+
+.loginp {
+  color: #acb5bb;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: -0.32px;
+  margin-top: 20px;
+}
+
+.loginimg {
+  width: 750px;
+  height: 1052px;
+  flex-shrink: 0;
+}
+
+.login-form {
+  background-color: #fff;
+  width: 480px;
+  padding: 32px;
+  border-radius: 16px;
+}
+
+.loginh2 {
+  color: #1a1c1e;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: -0.96px;
+}
+
+.loginlabel {
+  color: #acb5bb;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 160%;
+  letter-spacing: -0.24px;
+  display: block;
+  margin-top: 30px;
+}
+
+.inputlogin1 {
+  width: 100%;
+  height: 62px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 15px;
+  border: 1px solid #dce4e8;
+  background: #fff;
+  padding: 27px 24px;
+  margin-top: 10px;
+  background: url("../../assets/useremail.svg") no-repeat 10px center;
+  background-size: 20px 20px;
+  padding-left: 40px;
+}
+
+.inputlogin1::placeholder {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1c1e;
+  margin-left: 130px;
+}
+
+.inputlogin2 {
+  width: 100%;
+  height: 62px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 15px;
+  border: 1px solid #dce4e8;
+  background: #fff;
+  padding: 27px 24px;
+  margin-top: 10px;
+  background: url("../../assets/lock.svg") no-repeat 10px center;
+  background-size: 20px 20px;
+  padding-left: 40px;
+
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 20px 20px;
+}
+
+.inputlogin2 {
+  width: 100%;
+  height: 62px;
+  border-radius: 15px;
+  border: 1px solid #dce4e8;
+  background: #fff;
+  padding: 10px 24px;
+  margin-top: 10px;
+  position: relative;
+  font-size: 16px;
+  background-image: url("../../assets/lock.svg");
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 10px center, calc(100% - 30px) center;
+  padding-left: 40px;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.inputlogin2::placeholder {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1c1e;
+  margin-left: 130px;
+}
+
+.remember {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #1a1c1e;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: -0.32px;
+  margin-top: 50px;
+}
+.rememberinput[type="checkbox"] {
+  cursor: pointer;
+  transform: scale(1.5);
+  margin-right: 10px;
+}
+
+.forgotpassword {
+  color: #31b099;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: -0.32px;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+.forgotremember {
+  display: flex;
+  justify-content: space-between;
+}
+
+.loginbutton {
+  width: 100%;
+  height: 48px;
+  padding: 10px;
+  background-color: #31b099;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 30px;
+}
+
+.loginregistar {
+  color: #6c7278;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: -0.32px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.loginregisterspan {
+  color: #31b099;
+  cursor: pointer;
+}
+
+.all1 {
+  display: block;
+  margin-left: 150px;
+}
+
+.all2 {
+  display: flex;
+}
+
+.login-message {
+  text-align: center;
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.login-message.success {
+  color: #2ecc71;
+}
+
+.login-message.error {
+  color: #e74c3c;
+}
+
+.input-password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.show-hide-icon {
+  position: absolute;
+  right: 10px;
+  top: 35%;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .loginimg {
+    width: 360px;
+    height: 525px;
+  }
+
+  .logotext {
+    margin-top: 30px;
+    margin-left: 35%;
+  }
+
+  .loginh1 {
+    color: #fff;
+    text-align: center;
+    font-family: Manrope;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -0.72px;
+    margin-top: 20px;
+  }
+
+  .loginp {
+    color: #dce4e8;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.28px;
+    margin-top: 10px;
+  }
+
+  .login-form {
+    width: 327px;
+    margin-top: 20px;
+  }
+
+  .loginh2 {
+    color: #1a1c1e;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -0.72px;
+  }
+
+  .rememberinput {
+    color: #1a1c1e;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: -0.28px;
+  }
+
+  .rememberinput[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    transform: scale(1.5);
+    right: 10px;
+  }
+
+  .forgotpassword {
+    color: #31b099;
+    text-align: right;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: -0.28px;
+  }
+
+  .loginregistar {
+    color: #6c7278;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: -0.28px;
+  }
+
+  .all1 {
+    margin-left: 20px;
+  }
+
+  .all2 {
+    display: block;
+  }
+}
