@@ -118,32 +118,6 @@
   margin-top: 30px;
 }
 
-.navbar-item2 {
-  width: 144px;
-  height: 48px;
-  padding: 12px 24px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 14px;
-  background-color: #ed9c9b;
-  border: none;
-  cursor: pointer;
-  color: #fff;
-  text-align: center;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%;
-  letter-spacing: -0.4px;
-  text-decoration: none;
-  margin-top: 10px;
-}
-
-.link {
-  text-decoration: none;
-}
-
 @media screen and (max-width: 768px) {
   .welcome-message {
     color: #fff;

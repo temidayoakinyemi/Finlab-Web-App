@@ -38,11 +38,6 @@ const Dashboardhero = () => {
           Dashboard <img src={arrow_right_text} className="arrow-right" />{" "}
           <span className="hero-p-span">overview</span>
         </p>
-        <button className="navbar-item2" onClick={() => setMobileMenu(false)}>
-          <Link to="/Login" className="link">
-            Log Out
-          </Link>
-        </button>
         <div className="p2-date">
           <div className="hero-p-all">
             <Link to="/dashboard" className="hero-link">

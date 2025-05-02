@@ -59,6 +59,14 @@ const Dashboardnavbar = () => {
               alt="Menu"
               onClick={toggleMenu}
             />
+            <button
+              className="navbar-item2"
+              onClick={() => setMobileMenu(false)}
+            >
+              <Link to="/Login" className="link">
+                Log Out
+              </Link>
+            </button>
           </div>
         </div>
       </nav>
