@@ -1,47 +1,91 @@
 import React from "react";
 import "./Dashboardstatistics.css";
-import { Pie } from "react-chartjs-2";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-ChartJS.register(ArcElement, Tooltip, Legend);
+import { Pie, Bar } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  ArcElement,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Tooltip,
+  Legend,
+} from "chart.js";
+
+ChartJS.register(
+  ArcElement,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Tooltip,
+  Legend
+);
+
 import info_circle from "../../assets/info-circle.png";
 import arrow_down2 from "../../assets/arrow-down2.svg";
-import statistics from "../../assets/statistics.png";
 import green_dot from "../../assets/green-dot.png";
 import red_dot from "../../assets/red-dot.svg";
 import blue_dot from "../../assets/blue-dot.svg";
 import orange_dot from "../../assets/orange-dot.png";
 import arrowup_slant from "../../assets/arrowup-slant.svg";
 import arrow_down_slant from "../../assets/arrow-down-slant.svg";
-import income_analysis from "../../assets/income-analysis.png";
-import expense from "../../assets/expense.png";
-import chartbasic from "../../assets/chartbasic.png";
-import chartdays from "../../assets/chartdays.png";
-import chartnumber from "../../assets/chartnumber.png";
 import figma from "../../assets/figma.png";
 import adobe from "../../assets/adobe.png";
 import five_inter from "../../assets/five-inter.png";
 
 const Dashboardstatistics = () => {
+  const data = {
+    labels: ["Jan", "Feb", "Mar", "Apr"],
+    datasets: [
+      {
+        label: "Income",
+        data: [5000, 6000, 7000, 8000],
+        backgroundColor: "#10B981",
+        borderRadius: 5,
+        barThickness: 30,
+      },
+    ],
+  };
+
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: {
+          stepSize: 1000,
+        },
+      },
+    },
+  };
+
   return (
     <div className="all-rounder-statics">
       <div className="all-expense-ncome-category">
         <div className="analysis-expense2">
-          <div className="analysis">
-            <div className="h1-analysis">
-              <h1 className="analysis-h1">Income Analysis</h1>
-              <img src={info_circle} className="info-circle-analysis" />
+          <div className="analysis-expense2">
+            <div className="analysis">
+              <div className="h1-analysis">
+                <h1 className="analysis-h1">Income Analysis</h1>
+                <img src={info_circle} className="info-circle-analysis" />
+              </div>
+              <h1 className="analysis-h12">$8,527,224</h1>
+              <div className="btn-p">
+                <button className="analysis-btn">
+                  <img src={arrowup_slant} alt="" />
+                  +3.1%
+                </button>
+                <p className="analysis-p">VS This Month</p>
+              </div>
+              <div className="income-analysis">
+                <Bar data={data} options={options} />
+              </div>
             </div>
-            <h1 className="analysis-h12">$8,527,224</h1>
-            <div className="btn-p">
-              <button className="analysis-btn">
-                <img src={arrowup_slant} alt="" />
-                +3.1%
-              </button>
-              <p className="analysis-p">VS This Month</p>
-            </div>
-            <img className="income-analysis" src={income_analysis} alt="" />
           </div>
-          {/*  */}
           <div className="analysis-expense">
             <div className="h1-analysis-expn">
               <h1 className="analysis-h1-expn">Expense Analysis</h1>
@@ -55,10 +99,37 @@ const Dashboardstatistics = () => {
               </button>
               <p className="analysis-p-expn">VS This Month</p>
             </div>
-            <img className="income-analysis-expn" src={expense} alt="" />
+            <div className="income-analysis-expn">
+              <Bar
+                data={{
+                  labels: ["Jan", "Feb", "Mar", "Apr"],
+                  datasets: [
+                    {
+                      label: "Expenses",
+                      data: [3000, 2000, 4500, 3500],
+                      backgroundColor: "#EF4444",
+                      borderRadius: 5,
+                      barThickness: 30,
+                    },
+                  ],
+                }}
+                options={{
+                  responsive: true,
+                  plugins: {
+                    legend: { display: false },
+                  },
+                  scales: {
+                    y: {
+                      beginAtZero: true,
+                      ticks: { stepSize: 1000 },
+                    },
+                  },
+                }}
+              />
+            </div>
           </div>
-          {/*  */}
         </div>
+
         <div className="category2">
           <div className="h1-p-category">
             <div className="h1-category">
@@ -122,7 +193,8 @@ const Dashboardstatistics = () => {
           </div>
         </div>
       </div>
-      {/*  */}
+
+      {/* Replaced Balance Statistics Image with Real Chart */}
       <div className="statics-last-transaction">
         <div className="basic-statics">
           <div className="all-basic-info-img-arrow">
@@ -135,15 +207,68 @@ const Dashboardstatistics = () => {
               <img src={arrow_down2} className="arrow-down-2" />
             </div>
           </div>
-          <div className="chart-basic-day-number">
-            <img src={chartnumber} alt="" className="chart-number" />
-            <div className="chart-basic-day">
-              <img src={chartbasic} alt="" className="chart-basic" />
-              <img src={chartdays} alt="" className="chart-days" />
-            </div>
+
+          <div className="balance-chart" style={{ padding: "20px" }}>
+            <Bar
+              data={{
+                labels: [
+                  "Jan",
+                  "Feb",
+                  "Mar",
+                  "Apr",
+                  "May",
+                  "Jun",
+                  "Jul",
+                  "Aug",
+                  "Sep",
+                  "Oct",
+                  "Nov",
+                  "Dec",
+                ],
+                datasets: [
+                  {
+                    label: "Income",
+                    data: [
+                      14000, 9000, 12000, 17000, 13000, 16000, 11000, 12500,
+                      15500, 18000, 12000, 11500,
+                    ],
+                    backgroundColor: "#10B981",
+                    barThickness: 18,
+                    borderRadius: 5,
+                  },
+                  {
+                    label: "Expense",
+                    data: [
+                      10000, 7000, 10000, 15000, 11000, 14000, 9500, 11500,
+                      14500, 16000, 11000, 10500,
+                    ],
+                    backgroundColor: "#A7F3D0",
+                    barThickness: 18,
+                    borderRadius: 5,
+                  },
+                ],
+              }}
+              options={{
+                responsive: true,
+                plugins: {
+                  legend: {
+                    display: false,
+                  },
+                },
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    ticks: {
+                      callback: (value) => `$${value / 1000}k`,
+                    },
+                  },
+                },
+              }}
+            />
           </div>
-          {/*  */}
+
           <div className="last-transaction">
+            {/* last transaction cards (unchanged) */}
             <div className="all-transaction-info-img-arrow">
               <div className="transaction-info">
                 <h1 className="transaction-h1">Last Transaction</h1>
@@ -213,7 +338,6 @@ const Dashboardstatistics = () => {
             </div>
           </div>
         </div>
-        {/* end */}
       </div>
     </div>
   );

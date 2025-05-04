@@ -1,8 +1,26 @@
 import React from "react";
 import "./Dashboardoverview.css";
 import { Pie } from "react-chartjs-2";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-ChartJS.register(ArcElement, Tooltip, Legend);
+import { Bar } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  ArcElement,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Tooltip,
+  Legend,
+} from "chart.js";
+
+ChartJS.register(
+  ArcElement,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Tooltip,
+  Legend
+);
+
 import info_circle from "../../assets/info-circle.png";
 import atmcard_logo from "../../assets/atmcard-logo.svg";
 import transfer_icon from "../../assets/transfer-icon.svg";
@@ -19,9 +37,6 @@ import red_dot from "../../assets/red-dot.svg";
 import blue_dot from "../../assets/blue-dot.svg";
 import orange_dot from "../../assets/orange-dot.png";
 import arrowup_slant from "../../assets/arrowup-slant.svg";
-import arrow_down_slant from "../../assets/arrow-down-slant.svg";
-import income_analysis from "../../assets/income-analysis.png";
-import expense from "../../assets/expense.png";
 import figma from "../../assets/figma.png";
 import adobe from "../../assets/adobe.png";
 import five_inter from "../../assets/five-inter.png";
@@ -29,8 +44,35 @@ import star_bucks from "../../assets/star-bucks.png";
 import country1 from "../../assets/country1.svg";
 import country2 from "../../assets/country2.svg";
 import country3 from "../../assets/country3.svg";
+import arrow_down_slant from "../../assets/arrow-down-slant.svg";
 
 const Dashboardoverview = () => {
+  const data = {
+    labels: ["Jan", "Feb", "Mar", "Apr"],
+    datasets: [
+      {
+        label: "Income",
+        data: [4000, 6500, 5000, 8500],
+        backgroundColor: "#10B981",
+        borderRadius: 5,
+        barThickness: 30,
+      },
+    ],
+  };
+
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: { display: false },
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: { stepSize: 2000 },
+      },
+    },
+  };
+
   return (
     <div className="overview">
       <div className="all">
@@ -178,20 +220,24 @@ const Dashboardoverview = () => {
           </div>
           {/*  */}
           <div className="analysis-expense2">
-            <div className="analysis">
-              <div className="h1-analysis">
-                <h1 className="analysis-h1">Income Analysis</h1>
-                <img src={info_circle} className="info-circle-analysis" />
+            <div className="analysis-expense2">
+              <div className="analysis">
+                <div className="h1-analysis">
+                  <h1 className="analysis-h1">Income Analysis</h1>
+                  <img src={info_circle} className="info-circle-analysis" />
+                </div>
+                <h1 className="analysis-h12">$8,527,224</h1>
+                <div className="btn-p">
+                  <button className="analysis-btn">
+                    <img src={arrowup_slant} alt="" />
+                    +3.1%
+                  </button>
+                  <p className="analysis-p">VS This Month</p>
+                </div>
+                <div className="income-analysis">
+                  <Bar data={data} options={options} />
+                </div>
               </div>
-              <h1 className="analysis-h12">$8,527,224</h1>
-              <div className="btn-p">
-                <button className="analysis-btn">
-                  <img src={arrowup_slant} alt="" />
-                  +3.1%
-                </button>
-                <p className="analysis-p">VS This Month</p>
-              </div>
-              <img className="income-analysis" src={income_analysis} alt="" />
             </div>
             {/*  */}
             <div className="analysis-expense">
@@ -207,11 +253,38 @@ const Dashboardoverview = () => {
                 </button>
                 <p className="analysis-p-expn">VS This Month</p>
               </div>
-              <img className="income-analysis-expn" src={expense} alt="" />
+              <div className="income-analysis-expn">
+                <Bar
+                  data={{
+                    labels: ["Jan", "Feb", "Mar", "Apr"],
+                    datasets: [
+                      {
+                        label: "Expenses",
+                        data: [3000, 2000, 4500, 3500],
+                        backgroundColor: "#EF4444",
+                        borderRadius: 5,
+                        barThickness: 30,
+                      },
+                    ],
+                  }}
+                  options={{
+                    responsive: true,
+                    plugins: {
+                      legend: { display: false },
+                    },
+                    scales: {
+                      y: {
+                        beginAtZero: true,
+                        ticks: { stepSize: 1000 },
+                      },
+                    },
+                  }}
+                />
+              </div>
             </div>
+            {/*  */}
           </div>
         </div>
-
         {/*  */}
         <div className="all-activity-currency">
           <div className="activity">
