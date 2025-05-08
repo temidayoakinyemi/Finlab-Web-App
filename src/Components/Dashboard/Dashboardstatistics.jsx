@@ -76,8 +76,10 @@ const Dashboardstatistics = () => {
               <h1 className="analysis-h12">$8,527,224</h1>
               <div className="btn-p">
                 <button className="analysis-btn">
-                  <img src={arrowup_slant} alt="" />
-                  +3.1%
+                  <div className="p-arrowup-slant">
+                    <img src={arrowup_slant} alt="" />
+                    +3.1%
+                  </div>
                 </button>
                 <p className="analysis-p">VS This Month</p>
               </div>
@@ -94,8 +96,10 @@ const Dashboardstatistics = () => {
             <h1 className="analysis-h12-expn">$2,056,123</h1>
             <div className="btn-p-expn">
               <button className="analysis-btn-expn">
-                <img src={arrow_down_slant} alt="" />
-                -2.1%
+                <div className="p-arrowup-slant">
+                  <img src={arrow_down_slant} alt="" />
+                  -2.1%
+                </div>
               </button>
               <p className="analysis-p-expn">VS This Month</p>
             </div>

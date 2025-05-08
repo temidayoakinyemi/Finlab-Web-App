@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom"; // Import useLocation
+import { Link, useLocation } from "react-router-dom";
 import "./Dashboardhero.css";
 import { auth } from "../firebase";
 import arrow_right_text from "../../assets/arrow-right-text.svg";
-import calendar from "../../assets/calendar.svg";
+import { CalendarIcon } from "lucide-react";
+import { format } from "date-fns";
 
+// Import shadcn/ui components using relative paths
+import { Button } from "../../components/ui/button";
+import { Calendar } from "../../components/ui/calendar";
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+} from "../../components/ui/popover";
 
 const Dashboardhero = () => {
   const [userName, setUserName] = useState("");
-  const [currentDate, setCurrentDate] = useState("");
-
-  const location = useLocation(); // Use the location to track the active link
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const location = useLocation();
 
   useEffect(() => {
-    const date = new Date();
-    const formattedDate = date.toLocaleDateString("en-US", {
-      month: "short",
-      day: "numeric",
-      year: "numeric",
-    });
-    setCurrentDate(formattedDate);
-
     const user = auth.currentUser;
     if (user) {
       const emailName = user.email.split("@")[0];
@@ -35,8 +35,11 @@ const Dashboardhero = () => {
           <h1 className="welcome-message">Welcome back, {userName} 👏🏻</h1>
         )}
         <p className="hero-p">
-          Dashboard <img src={arrow_right_text} className="arrow-right" />{" "}
-          <span className="hero-p-span">overview</span>
+          <div className="arrow-overview">
+          Dashboard 
+            <img src={arrow_right_text} className="arrow-right" />{" "}
+            <span className="hero-p-span">overview</span>
+          </div>
         </p>
         <div className="p2-date">
           <div className="hero-p-all">
@@ -71,10 +74,26 @@ const Dashboardhero = () => {
             </Link>
           </div>
 
-          <div className="date-div">
-            <img src={calendar} alt="" />
-            <p className="current-date">{currentDate}</p>
-          </div>
+          <Popover className="date-picker-container">
+            <PopoverTrigger asChild>
+              <Button className="date-picker-button">
+                <CalendarIcon className="calendar-icon" />
+                {selectedDate ? (
+                  format(selectedDate, "PPP")
+                ) : (
+                  <span className="date-placeholder">Pick a date</span>
+                )}
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="date-picker-popover">
+              <Calendar
+                mode="single"
+                selected={selectedDate}
+                onSelect={setSelectedDate}
+                initialFocus
+              />
+            </PopoverContent>
+          </Popover>
         </div>
       </div>
     </div>

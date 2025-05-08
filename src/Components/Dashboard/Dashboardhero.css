@@ -22,6 +22,10 @@
   margin-left: 40px;
 }
 
+.arrow-overview {
+  display: flex;
+}
+
 .hero-p {
   color: #a2a6aa;
   font-size: 14px;
@@ -48,6 +52,7 @@
   height: 12px;
   justify-content: center;
   align-items: center;
+  margin-top: 5px;
 }
 
 .hero-link {
@@ -90,27 +95,51 @@
   gap: 40px;
 }
 
-.current-date {
-  color: #fff;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  margin-left: 5px;
+.date-picker-container {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 10;
 }
 
-.date-div {
+.date-picker-button {
+  background-color: #2c3441;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 12px;
   display: flex;
-  width: 151px;
-  height: 48px;
-  padding: 0px 18px;
-  text-align: center;
-  justify-content: center;
   align-items: center;
-  border-radius: 100px;
-  background: rgba(255, 255, 255, 0.07);
-  margin-right: 30px;
+  border: none;
+  cursor: pointer;
+  width: auto;
+  margin-right: 20px;
 }
+
+.date-picker-button:hover {
+  background-color: #3a4554;
+}
+
+.calendar-icon {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  color: white;
+}
+
+.date-placeholder {
+  color: #ffffff;
+}
+
+.date-picker-popover {
+  padding: 0;
+  width: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 
 .p2-date {
   display: flex;

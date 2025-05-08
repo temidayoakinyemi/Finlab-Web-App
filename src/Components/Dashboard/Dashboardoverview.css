@@ -231,13 +231,61 @@
   height: 40px;
   border-radius: 8px;
   background: #edf1f3;
+  padding: 10px;
+}
+
+.plan3-div {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: #edf1f3;
+  padding: 10px;
+}
+
+.plan4-div {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: #edf1f3;
+  padding: 10px;
+}
+
+.plan5-div {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: #edf1f3;
+  padding: 10px;
 }
 
 .car {
   width: 20px;
   height: 20px;
+}
+
+.car1 {
+  width: 20px;
+  height: 20px;
   margin-left: 9px;
-  margin-top: 9px;
+
+}
+
+.car2 {
+  width: 20px;
+  height: 20px;
+
+}
+
+.car3 {
+  width: 20px;
+  height: 20px;
+
+}
+
+.car4 {
+  width: 20px;
+  height: 20px;
+
 }
 
 .car-p {
@@ -575,6 +623,7 @@
   font-weight: 600;
   line-height: 150%;
   letter-spacing: -0.28px;
+
 }
 
 .analysis-p {
@@ -587,10 +636,14 @@
   margin-left: 10px;
 }
 
-.btn-p {
+.btn-p{
   display: flex;
   margin-top: 20px;
   margin-left: 0px;
+}
+
+.p-arrowup-slant {
+  display: flex;
 }
 
 .income-analysis {

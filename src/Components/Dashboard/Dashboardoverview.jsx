@@ -126,7 +126,7 @@ const Dashboardoverview = () => {
               </div>
               <div className="plan3">
                 <div className="plan3-div">
-                  <img className="car" src={console_plan} alt="" />
+                  <img className="car2" src={console_plan} alt="" />
                 </div>
                 <p className="car-p">New Console</p>
                 <p className="car-p3">$5.000,00</p>
@@ -135,14 +135,14 @@ const Dashboardoverview = () => {
             <div className="divplan2">
               <div className="plan4">
                 <div className="plan4-div">
-                  <img className="car" src={saving_plan} alt="" />
+                  <img className="car3" src={saving_plan} alt="" />
                 </div>
                 <p className="car-p">Savings</p>
                 <p className="car-p4">$5.000,00</p>
               </div>
               <div className="plan5">
                 <div className="plan5-div">
-                  <img className="car" src={wedding_plan} alt="" />
+                  <img className="car4" src={wedding_plan} alt="" />
                 </div>
                 <p className="car-p">Wedding</p>
                 <p className="car-p5">$5.000,00</p>
@@ -229,8 +229,10 @@ const Dashboardoverview = () => {
                 <h1 className="analysis-h12">$8,527,224</h1>
                 <div className="btn-p">
                   <button className="analysis-btn">
-                    <img src={arrowup_slant} alt="" />
-                    +3.1%
+                    <div className="p-arrowup-slant">
+                      <img src={arrowup_slant} alt="" />
+                      +3.1%
+                    </div>
                   </button>
                   <p className="analysis-p">VS This Month</p>
                 </div>
@@ -248,8 +250,10 @@ const Dashboardoverview = () => {
               <h1 className="analysis-h12-expn">$2,056,123</h1>
               <div className="btn-p-expn">
                 <button className="analysis-btn-expn">
-                  <img src={arrow_down_slant} alt="" />
-                  -2.1%
+                  <div className="p-arrowup-slant">
+                    <img src={arrow_down_slant} alt="" />
+                    -2.1%
+                  </div>
                 </button>
                 <p className="analysis-p-expn">VS This Month</p>
               </div>
