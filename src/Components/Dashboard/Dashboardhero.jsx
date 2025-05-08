@@ -7,7 +7,7 @@ import { CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
 
 // Import shadcn/ui components using relative paths
-import { Button } from "../../components/ui/button";
+import { Button } from "../../Components/ui/button";
 import { Calendar } from "../../components/ui/calendar";
 import {
   Popover,
