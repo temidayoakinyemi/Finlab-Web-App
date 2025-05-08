@@ -8,7 +8,7 @@ import { format } from "date-fns";
 
 // Import shadcn/ui components using relative paths
 import { Button } from "../../Components/ui/button";
-import { Calendar } from "../../components/ui/calendar";
+import { Calendar } from "../../Components/ui/calendar";
 import {
   Popover,
   PopoverTrigger,
