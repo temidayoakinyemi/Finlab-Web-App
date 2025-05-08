@@ -13,7 +13,7 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
-} from "../../components/ui/popover";
+} from "../../Components/ui/popover";
 
 const Dashboardhero = () => {
   const [userName, setUserName] = useState("");
