@@ -35,11 +35,11 @@ const Dashboardhero = () => {
           <h1 className="welcome-message">Welcome back, {userName} 👏🏻</h1>
         )}
         <p className="hero-p">
-          <div className="arrow-overview">
+          <span className="arrow-overview">
           Dashboard 
             <img src={arrow_right_text} className="arrow-right" />{" "}
             <span className="hero-p-span">overview</span>
-          </div>
+          </span>
         </p>
         <div className="p2-date">
           <div className="hero-p-all">
